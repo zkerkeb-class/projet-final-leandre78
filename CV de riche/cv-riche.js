@@ -5,7 +5,7 @@ document.getElementById("burger-menu").addEventListener("click", function() {
     this.classList.toggle("open");
 });
 
-// Gestion du changement de thème avec le switch
+// Gestion du changement de thème avec le switch soleil et lune
 document.getElementById("theme-switch").addEventListener("change", function() {
     document.documentElement.classList.toggle("dark-mode");
     if (document.documentElement.classList.contains("dark-mode")) {
@@ -15,7 +15,7 @@ document.getElementById("theme-switch").addEventListener("change", function() {
     }
 });
 
-// Charger le mode selon les préférences précédentes de l'utilisateur
+// Charger le mode dark ou light suivant ce que l'utilisateur avait fait avant
 window.addEventListener("load", function() {
     if (localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.add("dark-mode");
@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
     }
 });
 
-// Fonction pour ajuster la largeur de la barre de compétence
+// Ajuste la largeur de la barre de compétence
 function adjustSkillLevel(skillId, adjustment) {
     const skillBar = document.getElementById(skillId);
     let currentWidth = parseInt(skillBar.style.width);
@@ -38,7 +38,7 @@ function adjustSkillLevel(skillId, adjustment) {
     skillBar.style.width = newWidth + "%";
 }
 
-// Ajout des événements pour les boutons "+" et "-"
+// Ajout des événements pour les boutons + et - poiur les compétences 
 document.querySelectorAll('.skill').forEach(skill => {
     const plusButton = skill.querySelector('.skill-plus');
     const minusButton = skill.querySelector('.skill-minus');
@@ -57,11 +57,8 @@ document.querySelectorAll('.skill').forEach(skill => {
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
     
-    // Ici, vous pouvez ajouter le code pour envoyer les données du formulaire à un serveur
-    // Pour cet exemple, nous allons simplement afficher un message de confirmation
-    
     alert("Merci pour votre message ! Nous vous contacterons bientôt.");
-    this.reset(); // Réinitialise le formulaire après soumission
+    this.reset(); // Réinitialise le formulaire après envoie pour qu'il soit vide
 });
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
@@ -81,3 +78,5 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     // Affiche le message pour dire merci
     alert("Merci pour ton message jeune entrepreneur ! Nous vous contacterons très prochainement.");
 });
+
+
